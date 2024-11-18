@@ -15,6 +15,9 @@ jobs:
 
     - name: install Python
       run: sudo apt install python3
+    
+    - name: double-sync
+      run: git pull origin main
 
     - name: translate
       run: python3 utils/translate-rblx.py
