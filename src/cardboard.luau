@@ -20,6 +20,7 @@ local cardboard = {
 
     -- modules
     console = require("console.luau"),
+    debug = require("debug.luau"),
 }
 
 -- Game metadata is used for bug reports when errors occur. Please fill out "cardboard.metadata" with
