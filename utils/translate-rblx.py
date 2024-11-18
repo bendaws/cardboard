@@ -6,7 +6,7 @@ definitions = [
 ]
 
 for file in files_to_translate:
-    with open(file, "rw") as file_content:
+    with open(file, "w") as file_content:
         for line in file_content.readlines():
             if str.find(line, "require"):
                 location = str.find(line, "require")
@@ -14,3 +14,6 @@ for file in files_to_translate:
                 for definition in definitions:
                     if str.find(line, definition[0]):
                         str.replace(line, definition[0], definition[1])
+        
+        file_content.writelines(file_content)
+        file_content.close()
