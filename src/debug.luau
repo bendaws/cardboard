@@ -46,3 +46,5 @@ function debug.run(lua_code: string): number
 
     if code_err then return 1 else return 0 end
 end
+
+return debug
