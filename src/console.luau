@@ -23,7 +23,7 @@ console.config = {
 
 console.stream = {}
 
-function console.log(text: string, subsystem: string, ...)
+function console.log(text: string, subsystem: string, ...): number
     if subsystem then
         console.config.callbacks.log("[" .. console.config.metadata.name .. "|" .. subsystem .. "]: " .. text)
     else
@@ -31,9 +31,10 @@ function console.log(text: string, subsystem: string, ...)
     end
 
     table.insert(console.stream, "[" .. console.config.metadata.name .. "|" .. subsystem or "game" .. "]: " .. text)
+    return #console.stream -- Return the new text's position in the logstream
 end
 
-function console.warn(text: string, subsystem: string, ...)
+function console.warn(text: string, subsystem: string, ...): number
     if subsystem then
         console.config.callbacks.warn("[" .. console.config.metadata.name .. "|" .. subsystem .. "]: " .. text)
     else
@@ -41,9 +42,10 @@ function console.warn(text: string, subsystem: string, ...)
     end
 
     table.insert(console.stream, "[" .. console.config.metadata.name .. "|" .. subsystem or "game" .. "]: " .. text)
+    return #console.stream -- Return the new text's position in the logstream
 end
 
-function console.error(text: string, subsystem: string, ...)
+function console.error(text: string, subsystem: string, ...): number
     if subsystem then
         console.config.callbacks.error("[" .. console.config.metadata.name .. "|" .. subsystem .. "]: " .. text)
     else
@@ -51,6 +53,7 @@ function console.error(text: string, subsystem: string, ...)
     end
 
     table.insert(console.stream, "[" .. console.config.metadata.name .. "|" .. subsystem or "game" .. "]: " .. text)
+    return #console.stream -- Return the new text's position in the logstream
 end
 
 function console.history()
