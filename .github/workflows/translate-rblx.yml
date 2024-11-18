@@ -18,3 +18,6 @@ jobs:
 
     - name: translate
       run: python3 utils/translate-rblx.py
+    
+    - name: push to git
+      run: git push -u translation
