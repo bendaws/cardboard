@@ -24,7 +24,7 @@ debug.config = {
     },
 }
 
-function debug.run(lua_code: string)
+function debug.run(lua_code: string): number
     -- Check if loadstring is enabled
     local _, err = pcall(function()
         loadstring("print(\"hello world\")")
@@ -32,5 +32,17 @@ function debug.run(lua_code: string)
 
     if err then
         console.error("loadstring() is not enabled, so debug.run() cannot execute your code.", "cardboard_debug")
+        return 1
     end
+
+    local _, code_err = pcall(function()
+        local codefn = loadstring(lua_code)
+        local output = codefn()
+
+        for item in output do
+            console.log(item, "cardboard_debug_code")
+        end
+    end)
+
+    if code_err then return 1 else return 0 end
 end
