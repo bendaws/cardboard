@@ -26,7 +26,7 @@ jobs:
       run: git config user.email "runner@fv-az891-754.3qows1xflhlezoxdqozyuy3a1h.bx.internal.cloudapp.net"
     
     - name: commit
-      run: git commit -m "[translations] auto-translate code to Roblox luau"
+      run: git commit -a -m "[translations] auto-translate code to Roblox luau"
 
     - name: push to translation remote
       run: git push -u origin roblox-translation
