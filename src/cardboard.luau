@@ -17,6 +17,9 @@ local cardboard = {
     __VERSION = "3.1.0",
     folder = Instance.new("Configuration"), -- just gives it a cool icon lol
     script = script,
+
+    -- modules
+    console = require("console.luau"),
 }
 
 -- Game metadata is used for bug reports when errors occur. Please fill out "cardboard.metadata" with
@@ -47,6 +50,11 @@ function cardboard.metadata.update_game_metadata(name: string, developer: string
     cardboard.metadata.developer = developer
     cardboard.metadata.username = username
     cardboard.metadata.version = version
+
+    cardboard.console.config.metadata.name = name
+    cardboard.console.config.metadata.developer = developer
+    cardboard.console.config.metadata.username = username
+    cardboard.console.config.metadata.version = version
 end
 
 -- update folder information
@@ -78,3 +86,5 @@ cardboard.events.WarningOccurance.Parent = cardboard.folder
 if cardboard.script.Parent ~= cardboard.folder then
     script.Parent = cardboard.folder
 end
+
+return cardboard

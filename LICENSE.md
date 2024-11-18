@@ -1,4 +1,4 @@
-# Cardboard Open-Source License V3
+# Ben's Open-Source License V3
 (C) Copyright 2022-2024 Ben3333
 
 This source code is distributed with NO WARRANTY, in the hopes that it will be useful.
