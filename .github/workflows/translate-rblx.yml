@@ -1,0 +1,20 @@
+name: Translate Luau to Roblox framework
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: install Python
+      run: sudo apt install python3
+
+    - name: translate
+      run: python3 utils/translate-rblx.py
