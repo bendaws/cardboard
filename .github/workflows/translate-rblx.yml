@@ -18,6 +18,12 @@ jobs:
 
     - name: translate
       run: python3 utils/translate-rblx.py
+
+    - name: update identity name
+      run: git config user.name "cardboard-bot"
+    
+    - name: update identity email
+      run: git config user.email "runner@fv-az891-754.3qows1xflhlezoxdqozyuy3a1h.bx.internal.cloudapp.net"
     
     - name: commit
       run: git commit -m "[translations] auto-translate code to Roblox luau"
