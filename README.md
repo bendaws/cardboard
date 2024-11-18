@@ -1,0 +1,2 @@
+# Cardboard
+Cardboard is a collection of game development utilies for the Roblox platform designed to make debugging and writing code easier. It is fast and modular with a minimal amount of fatal errors that can occur.

@@ -9,7 +9,7 @@ You have these rights to the source code as long as you follow the Cardboard Ope
 License:
 - distribute the source code, as long as it remains libre code.
 - modify the source code
-- use the source code in another project or application
+- use or embed the source code in another project or application
 
 As long as you follow these terms, the licensor cannot remove your rights to the source code.
 
