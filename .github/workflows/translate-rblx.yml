@@ -19,5 +19,8 @@ jobs:
     - name: translate
       run: python3 utils/translate-rblx.py
     
-    - name: push to git
-      run: git push -u translation
+    - name: update remote
+      run: git remote add translate-remote https://github.com/bendaws/cardboard
+
+    - name: push to translation remote
+      run: git push -u translate-remote translation
