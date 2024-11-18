@@ -1,4 +1,4 @@
-files_to_translate = ["src/cardboard.luau", "src/console.luau", "debug.luau"]
+files_to_translate = ["src/cardboard.luau", "src/console.luau", "src/debug.luau"]
 
 definitions = [
     ["require(\"console.luau\")", "require(game.ReplicatedStorage.Cardboard.Console)"],
