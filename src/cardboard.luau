@@ -23,10 +23,6 @@ local cardboard = {
     debug = require("debug.luau"),
 }
 
--- Game metadata is used for bug reports when errors occur. Please fill out "cardboard.metadata" with
--- the function
---      cardboard.metadata.update_game_metadata(name, developer, username, version)
-
 cardboard.metadata = {
     name = "Null",
     developer = "Null",
@@ -45,18 +41,6 @@ cardboard.cb = {
     report_url = "https://github.com/cardboardrbx/cardboardrbx/issues/new",
     -- Unless you modified Cardboard, please leave this as it is.
 }
-
-function cardboard.metadata.update_game_metadata(name: string, developer: string, username: string, version: string)
-    cardboard.metadata.name = name
-    cardboard.metadata.developer = developer
-    cardboard.metadata.username = username
-    cardboard.metadata.version = version
-
-    cardboard.console.config.metadata.name = name
-    cardboard.console.config.metadata.developer = developer
-    cardboard.console.config.metadata.username = username
-    cardboard.console.config.metadata.version = version
-end
 
 -- update folder information
 cardboard.folder.Name = "Cardboard"
@@ -83,9 +67,13 @@ cardboard.events.WarningOccurance = Instance.new("RemoteEvent")
 cardboard.events.WarningOccurance.Name = "__CARDBOARD_WARNINGOCCURANCE"
 cardboard.events.WarningOccurance.Parent = cardboard.folder
 
--- Check if cardboard is in cardboard folder
-if cardboard.script.Parent ~= cardboard.folder then
-    script.Parent = cardboard.folder
-end
+print([[
+=================================================
+|  CDA    |  Cardboard Debugging Engine         |
+|  ABR    |  v3.1                               |
+|  ROD    |  (C) Copyright 2022 - 2024 Ben3333  |
+=================================================
+]])
 
-return cardboard
+-- Everything is ready to start here
+
