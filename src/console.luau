@@ -35,6 +35,13 @@ function console.log(text: string, subsystem: string, ...): number
     return #console.stream -- Return the new text's position in the logstream
 end
 
+function console.rlog(text: string, ...): number
+    console.config.callbacks.log(text)
+
+    table.insert(console.stream, text)
+    return #console.stream -- Return the new text's position in the logstream
+end
+
 function console.warn(text: string, subsystem: string, ...): number
     if subsystem then
         console.config.callbacks.warn("[" .. console.config.metadata.name .. "|" .. subsystem .. "]: " .. text)
