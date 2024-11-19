@@ -12,7 +12,7 @@ local cardboard = {
     console = require("console.luau"),
     debug = require("debug.luau"),
     workspace = require("workspace.luau"),
-    commands = require("commands.luau")
+    commands = require("commands.luau"),
 }
 
 cardboard.metadata = {
@@ -70,3 +70,4 @@ print([[
 -- Everything is ready to start here
 
 cardboard.workspace.scan()
+cardboard.commands.loadplugins()
