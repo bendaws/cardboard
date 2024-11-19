@@ -12,6 +12,7 @@ local cardboard = {
     console = require("console.luau"),
     debug = require("debug.luau"),
     workspace = require("workspace.luau"),
+    commands = require("commands.luau")
 }
 
 cardboard.metadata = {
