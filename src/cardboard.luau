@@ -77,3 +77,36 @@ print([[
 
 -- Everything is ready to start here
 
+local Workspace = {} -- Will be a reconstruction of the workspace
+
+for index, instance: Instance in game:GetService("Workspace"):GetChildren() do
+    if instance:IsA("Folder") then
+        -- treat as a folder
+        Workspace[instance.Name] = {
+            __CARDBOARD_INSTANCE_TYPE = "Folder",
+            __CARDBOARD_PATH = "game.Workspace." .. instance.Name,
+            __CARDBOARD_INSTANCE = instance,
+        }
+
+        cardboard.console.log("discovered new folder in workspace " .. instance.Name, "workspace_explorer")
+        
+        for index2, instance2: Instance in instance:GetChildren() do
+            Workspace[instance.Name][instance2.Name] = {
+                __CARDBOARD_INSTANCE_TYPE = instance2.ClassName,
+                __CARDBOARD_PATH = "game.Workspace." .. instance.Name .. "." .. instance2.Name,
+                __CARDBOARD_INSTANCE = instance2,
+
+                cardboard.console.log("discovered new item in workspace " .. instance2.Name, "workspace_explorer")
+            }
+        end
+    else
+        Workspace[instance.Name] = {
+            __CARDBOARD_INSTANCE_TYPE = instance.ClassName,
+            __CARDBOARD_PATH = "game.Workspace." .. instance.Name,
+            __CARDBOARD_INSTANCE = instance,
+        }
+
+        cardboard.console.log("discovered new item in workspace " .. instance.Name, "workspace_explorer")
+    end
+end
+
