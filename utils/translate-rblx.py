@@ -18,6 +18,7 @@ for file in files_to_translate:
                 for definition in definitions:
                     if str.find(line, definition[0]):
                         str.replace(line, definition[0], definition[1])
+                        print(("Found definition %s in %s", definition[0], file))
         
         with open(file, "w") as file_write:
             file_content.writelines(modify_content)
