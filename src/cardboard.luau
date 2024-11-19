@@ -1,17 +1,7 @@
--- Cardboard V3.1
+-- Cardboard v3.1
 -- (C) Copyright 2022 - 2024 Ben3333
--- Version 3.1 is distributed under the Cardboard Open-Source License V3.
-
---[[
-    NOTICE: Cardboard is Open-Source and Free (Libre software)
-
-    If Cardboard has been sold to you, you have been scammed.
-    The versions are avaliable on Git:
-
-            https://github.com/cardboardrbx/cardboardrbx
-    
-    Thank you!
-]]
+-- Cardboard is open-source under BOSL3.
+-- https://github.com/bendaws/cardboard
 
 local cardboard = {
     __VERSION = "3.1.0",

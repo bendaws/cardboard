@@ -1,0 +1,4 @@
+-- Cardboard v3.1
+-- (C) Copyright 2022 - 2024 Ben3333
+-- Cardboard is open-source under BOSL3.
+-- https://github.com/bendaws/cardboard

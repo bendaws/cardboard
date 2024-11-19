@@ -1,6 +1,7 @@
--- Cardboard V3.1
+-- Cardboard v3.1
 -- (C) Copyright 2022 - 2024 Ben3333
--- Version 3.1 is distributed under the Cardboard Open-Source License V3.
+-- Cardboard is open-source under BOSL3.
+-- https://github.com/bendaws/cardboard
 
 local console = {}
 
