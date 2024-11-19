@@ -3,6 +3,7 @@ files_to_translate = ["src/cardboard.luau", "src/console.luau", "src/debug.luau"
 definitions = [
     ["require(\"console.luau\")", "require(game.ReplicatedStorage.Cardboard.Console)"],
     ["require(\"debug.luau\")", "require(game.ReplicatedStorage.Cardboard.Debug)"],
+    ["require(\"workspace.luau\")", "require(game.ReplicatedStorage.Cardboard.Workspace)"],
 ]
 
 for file in files_to_translate:
