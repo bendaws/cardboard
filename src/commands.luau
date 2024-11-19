@@ -87,7 +87,40 @@ commands.plugins = {
     -- See the example in /examples for this.
 }
 
-commands.dictionary = {
-}
+commands.memcmds = {}
+
+function commands.commandexists(name)
+    for jdx, command_description in commands.memcmds do
+        if command_description[1] == name then
+            return true
+        end
+    end
+
+    return false
+end
+
+function commands.loadplugins()
+    for idx, plugin in commands.plugins do
+        console.log(string.format("Loading plugin %s [index %s]", plugin.name, tostring(idx)), "cardboard-utils-plugin")
+        
+        if not plugin.name or not plugin.version or not plugin.author then
+            console.warn(string.format("Error loading plugin [index %s]. Missing metadata", tostring(idx)), "cardboard-utils-plugin")
+            continue
+        end
+
+        if plugin.onPluginInitialization then plugin.onPluginInitialization() end
+        
+        for jdx, command in plugin.commands do
+            if not commands.commandexists(command.name) then
+                if command.name and command.onCommandRun then
+                    table.insert(commands.memcmds, {command.name, command.onCommandRun})
+                else
+                    console.warn(string.format("Error loading plugin %s. No name or onCommandRun() found", plugin.name), "cardboard-utils-plugin")
+                    continue
+                end
+            end
+        end
+    end
+end
 
 return commands
